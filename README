@@ -1,0 +1,23 @@
+conditions_helper
+====================
+
+conditions_helper is a plugin which helps to create rather complex conditions when using ActiveRecord#find method.
+
+The main princilpe is to write conditions in form of array, array brackets will mean the same as parentheses on raw SQL condition. It's helpfull when conditions are created dynamically and you need not only AND but OR operator.
+
+Example:
+
+    Task.find(:all, :conditions => create_conditions([
+        ([ "category_id = ?", category.id ] if @category),
+        :and,
+        [ ["user_id IS NULL"], :or, (["user_id = ?", @user.id] if @user)]        
+      ]))
+    #here condition on category_id and user_id will be added only if @category and @user are provided respectively
+
+
+Install:
+  .script/plugin install git://github.com/electronick/conditions_helper.git
+
+Author:
+ Nick Pohodnya (nick.pohodnya@gmail.com) 
+
