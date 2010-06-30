@@ -3,7 +3,7 @@ conditions_helper
 
 conditions_helper is a plugin which helps to create rather complex conditions when using ActiveRecord#find method.
 
-The main princilpe is to write conditions in form of array, array brackets will mean the same as parentheses on raw SQL condition. It's helpfull when conditions are created dynamically and you need not only AND but OR operator.
+The main princilpe is to write conditions in form of array, array brackets will mean the same as parentheses on raw SQL condition. It's helpfull when conditions are created dynamically and you need not only AND but OR operator too.
 
 Example:
 
